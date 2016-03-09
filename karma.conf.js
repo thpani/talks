@@ -23,6 +23,8 @@ module.exports = function(config){
       'dist/assets/lib/angular-route/angular-route.js',
       'dist/assets/lib/angular-resource/angular-resource.js',
       'dist/assets/lib/angular-mocks/angular-mocks.js',
+      'dist/assets/lib/angular-ui-grid/ui-grid.js',
+      'dist/assets/lib/angular-ui-router/release/angular-ui-router.js',
       'dist/assets/scripts/all.min.js',
       'test/spec/**/*.coffee'
     ],
