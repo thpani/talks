@@ -26,9 +26,14 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
+  var c = coffee();
+  c.on('error', function(e) {
+    gutil.log(e);
+    c.end();
+  });
   return es.merge(
       gulp.src('app/scripts/**/*.coffee').
-        pipe(coffee()), 
+        pipe(c), 
       gulp.src('app/scripts/**/*.js')).
     pipe( concat('all.min.js')).
     pipe( gulp.dest('dist/assets/scripts/')).
