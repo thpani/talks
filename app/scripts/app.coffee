@@ -1,16 +1,20 @@
 angular.module('talksApp', [
   'ngRoute',
   'lbServices',
-  'ui.grid'
-]).
-config ['$routeProvider', ($routeProvider) ->
-  $routeProvider
-    .when '/talks',
+  'ui.grid',
+  'ui.router'
+])
+.config ['$stateProvider', '$urlRouterProvider',
+($stateProvider, $urlRouterProvider) ->
+  $stateProvider
+    .state 'talks',
+      url: '/talks'
       templateUrl: 'talks.html'
       controller: 'TalksCtrl'
-    .when '/talk',
+    .state 'talk',
+      url: '/talk/:id'
       templateUrl: 'talk.html'
       controller: 'TalkCtrl'
-    .otherwise
-      redirectTo: '/talks'
+
+  $urlRouterProvider.otherwise '/talks'
 ]

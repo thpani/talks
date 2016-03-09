@@ -3,7 +3,7 @@ angular.module 'talksApp'
     $scope.gridOptions =
       columnDefs: [
         field: 'id'
-        cellTemplate: '<div><a href="talk/{{row.entity.id}}">{{row.entity.title}}</a></div>'
+        cellTemplate: '<div><a ui-sref="talk({id: row.entity.id})">{{row.entity.title}}</a></div>'
         ,
         { field: 'title' },
         { field: 'speaker' }
