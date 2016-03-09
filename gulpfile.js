@@ -7,8 +7,6 @@ var gulp   = require('gulp'),
     gutil  = require('gulp-util'),
     jade   = require('gulp-jade'),
     livereload = require('gulp-livereload'),
-    tinylr = require('tiny-lr'),
-    server = tinylr(),
     styl   = require('gulp-stylus'),
     path   = require('path'),
     es     = require('event-stream');
@@ -24,7 +22,7 @@ gulp.task('css', function() {
         pipe( styl( { whitespace: true } ) ),
       gulp.src('app/stylesheets/**/*.css')).
     pipe( gulp.dest('dist/assets/stylesheets/') ).
-    pipe( livereload( server ));
+    pipe( livereload());
 });
 
 gulp.task('js', function() {
@@ -34,7 +32,7 @@ gulp.task('js', function() {
       gulp.src('app/scripts/**/*.js')).
     pipe( concat('all.min.js')).
     pipe( gulp.dest('dist/assets/scripts/')).
-    pipe( livereload( server ));
+    pipe( livereload());
 });
 
 gulp.task('templates', function() {
@@ -44,7 +42,7 @@ gulp.task('templates', function() {
       gulp.src('app/index.html'),
       gulp.src('app/views/**/*.html')).
     pipe(gulp.dest('dist/')).
-    pipe( livereload( server ));
+    pipe( livereload());
 });
 
 gulp.task('express', function() {
@@ -54,21 +52,17 @@ gulp.task('express', function() {
 });
  
 gulp.task('watch', function () {
-  server.listen(35729, function (err) {
-    if (err) {
-      return console.log(err);
-    }
+  livereload.listen();
  
-    gulp.watch('app/stylesheets/**/*.css',['css']);
-    gulp.watch('app/stylesheets/**/*.styl',['css']);
- 
-    gulp.watch('app/scripts/**/*.js',['js']);
-    gulp.watch('app/scripts/**/*.coffee',['js']);
- 
-    gulp.watch('app/views/**/*.jade',['templates']);
-    gulp.watch('app/views/**/*.html',['templates']);
-    gulp.watch('app/index.html',['templates']);
-  });
+  gulp.watch('app/stylesheets/**/*.css',['css']);
+  gulp.watch('app/stylesheets/**/*.styl',['css']);
+
+  gulp.watch('app/scripts/**/*.js',['js']);
+  gulp.watch('app/scripts/**/*.coffee',['js']);
+
+  gulp.watch('app/views/**/*.jade',['templates']);
+  gulp.watch('app/views/**/*.html',['templates']);
+  gulp.watch('app/index.html',['templates']);
 });
 
 // Default Task
