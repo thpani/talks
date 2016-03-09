@@ -21,6 +21,7 @@ module.exports = function(config){
     files : [
       'dist/assets/lib/angular/angular.js',
       'dist/assets/lib/angular-route/angular-route.js',
+      'dist/assets/lib/angular-resource/angular-resource.js',
       'dist/assets/lib/angular-mocks/angular-mocks.js',
       'dist/assets/scripts/all.min.js',
       'test/spec/**/*.coffee'
