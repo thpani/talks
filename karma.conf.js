@@ -1,7 +1,7 @@
 module.exports = function(config){
   config.set({
     preprocessors: {
-      '**/*.coffee': ['coffee']
+      'test/spec/**/*.coffee': ['coffee']
     },
 
     coffeePreprocessor: {
@@ -19,11 +19,10 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/app.js',
-      'app/scripts/**/*.coffee',
+      'dist/assets/lib/angular/angular.js',
+      'dist/assets/lib/angular-route/angular-route.js',
+      'dist/assets/lib/angular-mocks/angular-mocks.js',
+      'dist/assets/scripts/all.min.js',
       'test/spec/**/*.coffee'
     ],
 
@@ -45,6 +44,5 @@ module.exports = function(config){
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     }
-
   });
 };
