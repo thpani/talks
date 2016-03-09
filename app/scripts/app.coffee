@@ -1,12 +1,16 @@
 angular.module('talksApp', [
   'ngRoute',
-  'lbServices'
+  'lbServices',
+  'ui.grid'
 ]).
 config ['$routeProvider', ($routeProvider) ->
   $routeProvider
+    .when '/talks',
+      templateUrl: 'talks.html'
+      controller: 'TalksCtrl'
     .when '/talk',
       templateUrl: 'talk.html'
       controller: 'TalkCtrl'
     .otherwise
-      redirectTo: '/talk'
+      redirectTo: '/talks'
 ]
