@@ -1,5 +1,6 @@
 angular.module('talksApp', [
-  'ngRoute'
+  'ngRoute',
+  'lbServices'
 ]).
 config ['$routeProvider', ($routeProvider) ->
   $routeProvider
