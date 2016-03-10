@@ -1,0 +1,27 @@
+doctype html
+html(ng-app="talksApp")
+  head
+    title Talks
+    link(rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" href="assets/lib/angular-ui-grid/ui-grid.min.css")
+    link(rel="stylesheet" href="assets/stylesheets/app.css")
+
+  body
+    nav.navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-head
+          a.navbar-brand(href="/") Talks
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.active: a(href="#") Home
+          li.active: a(href="#") Eins
+          li.active: a(href="#") Zwei
+
+    div(ui-view)
+    script(src="assets/lib/livereload-js/dist/livereload.js?host=localhost")
+    script(src="assets/lib/angular/angular.js")
+    script(src="assets/lib/angular-route/angular-route.js")
+    script(src="assets/lib/angular-resource/angular-resource.js")
+    script(src="assets/lib/angular-ui-grid/ui-grid.js")
+    script(src="assets/lib/angular-ui-router/release/angular-ui-router.js")
+    script(src="assets/scripts/all.min.js")

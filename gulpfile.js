@@ -44,7 +44,8 @@ gulp.task('templates', function() {
   return es.merge(
       gulp.src('app/views/**/*.jade').
         pipe(jade({ pretty: true })),
-      gulp.src('app/index.html'),
+      gulp.src('app/index.jade').
+        pipe(jade({ pretty: true })),
       gulp.src('app/views/**/*.html')).
     pipe(gulp.dest('dist/')).
     pipe( livereload());
@@ -67,7 +68,7 @@ gulp.task('watch', function () {
 
   gulp.watch('app/views/**/*.jade',['templates']);
   gulp.watch('app/views/**/*.html',['templates']);
-  gulp.watch('app/index.html',['templates']);
+  gulp.watch('app/index.jade',['templates']);
 });
 
 // Default Task
