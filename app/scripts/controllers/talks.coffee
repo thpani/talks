@@ -4,7 +4,7 @@ angular.module 'talksApp'
       columnDefs: [
         {
           field: 'title',
-          cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="talk({id: row.entity.id})">{{row.entity.title}}</a></div>'
+          cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="talkEdit({id: row.entity.id})">{{row.entity.title}}</a></div>'
         },
         { field: 'speaker' }
       ]

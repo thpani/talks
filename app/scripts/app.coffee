@@ -7,11 +7,11 @@ angular.module('talksApp', [
 .config ['$stateProvider', '$urlRouterProvider',
 ($stateProvider, $urlRouterProvider) ->
   $stateProvider
-    .state 'talks',
+    .state 'talkList',
       url: '/talks'
       templateUrl: 'talks.html'
       controller: 'TalkListCtrl'
-    .state 'talk',
+    .state 'talkEdit',
       url: '/talks/:id/edit'
       templateUrl: 'talk-edit.html'
       controller: 'TalkEditCtrl'
