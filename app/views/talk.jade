@@ -15,7 +15,7 @@ mixin datetimepicker(label, model)
       .dropdown
         a.dropdown-toggle(id="dropdown"+label role="button" data-toggle="dropdown" data-target="#" href="")
           .input-group
-            input.form-control(type="text" ng-model=model)
+            input.form-control(type="text" ng-model=model data-date-time-input="llll")
             span.input-group-addon: i.glyphicon.glyphicon-calendar
         ul.dropdown-menu(role="menu")
           datetimepicker(ng-model=model data-datetimepicker-config="{ dropdownSelector: '#dropdown"+label+"' }")

@@ -3,7 +3,8 @@ angular.module('talksApp', [
   'lbServices',
   'ui.grid',
   'ui.router',
-  'ui.bootstrap.datetimepicker'
+  'ui.bootstrap.datetimepicker',
+  'ui.dateTimeInput'
 ])
 .config ['$stateProvider', '$urlRouterProvider',
 ($stateProvider, $urlRouterProvider) ->
