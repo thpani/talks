@@ -18,6 +18,7 @@ mixin submitbutton
 .row
   .col-md-12
     h1.page-header Edit talk "{{talk.title}}"
+
     form.form-horizontal(ng-submit="submit()")
       +textinput('Title', 'talk.title')
       +textinput('Speaker', 'talk.speaker')

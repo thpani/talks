@@ -12,9 +12,9 @@ angular.module('talksApp', [
       templateUrl: 'talks.html'
       controller: 'TalksCtrl'
     .state 'talk',
-      url: '/talk/:id'
-      templateUrl: 'talk.html'
-      controller: 'TalkCtrl'
+      url: '/talks/:id/edit'
+      templateUrl: 'talk-edit.html'
+      controller: 'TalkEditCtrl'
 
   $urlRouterProvider.otherwise '/talks'
 ]
