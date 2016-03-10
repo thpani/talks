@@ -15,6 +15,10 @@ angular.module('talksApp', [
       url: '/talks/:id/edit'
       templateUrl: 'talk-edit.html'
       controller: 'TalkEditCtrl'
+    .state 'talkNew',
+      url: '/talks/new'
+      templateUrl: 'talk-add.html'
+      controller: 'TalkCreateCtrl'
 
   $urlRouterProvider.otherwise '/talks'
 ]

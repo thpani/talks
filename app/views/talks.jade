@@ -1,4 +1,9 @@
 .row
   .col-md-12
-    h1.page-header Talks
+    .page-header
+      .gridactions
+        button.btn.btn-default(ui-sref="talkNew")
+          span.glyphicon.glyphicon-plus
+          |  Add talk
+      h1 Talks
     div(ui-grid="gridOptions")
