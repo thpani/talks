@@ -1,4 +1,4 @@
-describe 'Controller: TalkCtrl', () ->
+describe 'Controller: TalkListCtrl', () ->
 
   # load the controller's module
   beforeEach(module('talksApp'))
@@ -6,7 +6,7 @@ describe 'Controller: TalkCtrl', () ->
   # Initialize the controller and a mock scope
   beforeEach(inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    TalkCtrl = $controller 'TalkCtrl',
+    TalkListCtrl = $controller 'TalkListCtrl',
       $scope: scope
       # place here mocked dependencies
   )
