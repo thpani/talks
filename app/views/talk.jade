@@ -1,0 +1,24 @@
+mixin textinput(label, model)
+  .form-group
+    label.col-sm-2.control-label= label
+    .col-sm-10
+      input.form-control(type="text" placeholder=label ng-model=model)
+mixin textarea(label, model)
+  .form-group
+    label.col-sm-2.control-label= label
+    .col-sm-10
+      textarea.form-control(type="text" placeholder=label ng-model=model)
+
+.row
+  .col-md-12
+    h1.page-header Edit talk "{{talk.title}}"
+
+    form.form-horizontal(ng-submit="submit()")
+      +textinput('Title', 'talk.title')
+      +textinput('Speaker', 'talk.speaker')
+      +textinput('Homepage', 'talk.speaker_url')
+      +textinput('From', 'talk.date_from')
+      +textinput('To', 'talk.date_to')
+      +textarea('Abstract', 'talk.abstract')
+      +textarea('Biography', 'talk.biography')
+      block buttons
