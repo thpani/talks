@@ -8,6 +8,17 @@ mixin textarea(label, model)
     label.col-sm-2.control-label= label
     .col-sm-10
       textarea.form-control(type="text" placeholder=label ng-model=model)
+mixin datetimepicker(label, model)
+  .form-group
+    label.col-sm-2.control-label= label
+    .col-sm-10
+      .dropdown
+        a.dropdown-toggle(id="dropdown"+label role="button" data-toggle="dropdown" data-target="#" href="")
+          .input-group
+            input.form-control(type="text" ng-model=model)
+            span.input-group-addon: i.glyphicon.glyphicon-calendar
+        ul.dropdown-menu(role="menu")
+          datetimepicker(ng-model=model data-datetimepicker-config="{ dropdownSelector: '#dropdown"+label+"' }")
 
 .row
   .col-md-12
@@ -17,8 +28,8 @@ mixin textarea(label, model)
       +textinput('Title', 'talk.title')
       +textinput('Speaker', 'talk.speaker')
       +textinput('Homepage', 'talk.speaker_url')
-      +textinput('From', 'talk.date_from')
-      +textinput('To', 'talk.date_to')
+      +datetimepicker('From', 'talk.date_from')
+      +datetimepicker('To', 'talk.date_to')
       +textarea('Abstract', 'talk.abstract')
       +textarea('Biography', 'talk.biography')
       block buttons

@@ -2,7 +2,8 @@ angular.module('talksApp', [
   'ngRoute',
   'lbServices',
   'ui.grid',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap.datetimepicker'
 ])
 .config ['$stateProvider', '$urlRouterProvider',
 ($stateProvider, $urlRouterProvider) ->
