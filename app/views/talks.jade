@@ -5,5 +5,8 @@
         button.btn.btn-default(ui-sref="talkNew")
           span.glyphicon.glyphicon-plus
           |  Add talk
+        button.btn.btn-danger(ng-disabled="!isSelected" ng-click="delete()")
+          span.glyphicon.glyphicon-trash
+          |  Delete talk
       h1 Talks
-    div(ui-grid="gridOptions")
+    div(ui-grid="gridOptions" ui-grid-selection)

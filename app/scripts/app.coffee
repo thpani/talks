@@ -2,6 +2,7 @@ angular.module('talksApp', [
   'ngRoute',
   'lbServices',
   'ui.grid',
+  'ui.grid.selection',
   'ui.router',
   'ui.bootstrap.datetimepicker',
   'ui.dateTimeInput'
