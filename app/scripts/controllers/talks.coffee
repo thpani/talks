@@ -1,5 +1,5 @@
 angular.module 'talksApp'
-  .controller 'TalksCtrl', ($scope, Talk) ->
+  .controller 'TalkListCtrl', ($scope, Talk) ->
     $scope.gridOptions =
       columnDefs: [
         {

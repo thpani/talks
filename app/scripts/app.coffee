@@ -10,7 +10,7 @@ angular.module('talksApp', [
     .state 'talks',
       url: '/talks'
       templateUrl: 'talks.html'
-      controller: 'TalksCtrl'
+      controller: 'TalkListCtrl'
     .state 'talk',
       url: '/talks/:id/edit'
       templateUrl: 'talk-edit.html'
